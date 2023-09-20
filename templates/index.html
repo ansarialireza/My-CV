@@ -30,7 +30,7 @@
    		
    	</div> <!-- /row --> 		
    </header> <!-- /header -->
-
+   {% for profile in profiles %}
 	<!-- intro section
    ================================================== -->
    <section id="intro">   
@@ -43,7 +43,7 @@
    			<div class="col-twelve">
 
 	   			<h5>Hello, World.</h5>
-	   			<h1>I'm Alireza Ansari.</h1>
+	   			<h1>I'm {{ profile.full_name }}.</h1>
 
 	   			<p class="intro-position">
 	   				<span>Back-end Developer</span>
@@ -105,23 +105,23 @@
    			<ul class="info-list">
    				<li>
    					<strong>Fullname:</strong>
-   					<span>Alireza Ansari</span>
+   					<span>{{ profile.full_name }}</span>
    				</li>
    				<li>
    					<strong>Birth Date:</strong>
-   					<span>February 21, 1999</span>
+   					<span>{{ profile.birth_date }}</span>
    				</li>
    				<li>
    					<strong>Job:</strong>
-   					<span>Freelancer, Backend Developer</span>
+   					<span>{{ profile.job }}</span>
    				</li>
 				   <li>
 					<strong>language:</strong>
-					<span>Persian and English</span>
+					<span>{{ profile.language }}</span>
 				</li>
    				<li>
    					<strong>Email:</strong>
-   					<span>anssrza@gmail.com</span>
+   					<span>{{ profile.email }}</span>
    				</li>
 
    			</ul> <!-- /info-list -->
@@ -525,7 +525,7 @@
 
    			<h5>Email Me At</h5>
 
-   			<p>anssrza@gmail.com</p>
+   			<p>{{ profile.email }}</p>
 
    		</div>
 
@@ -537,7 +537,7 @@
 
    			<h5>Call Me At</h5>
 
-   			<p>Mobile: (+98)9165630639<br>
+   			<p>Mobile:{{profile.mobile}}<br>
 			   </p>
 
    		</div>
@@ -546,7 +546,7 @@
 		
 	</section> <!-- /contact -->
 
-
+	{% endfor %}
    <!-- footer
    ================================================== -->
 
